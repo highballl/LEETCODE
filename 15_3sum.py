@@ -1,4 +1,4 @@
-from collections import deque, Counter
+from collections import Counter
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
@@ -7,7 +7,7 @@ class Solution:
             return []
 
         whole = Counter(nums)
-        keys = deque(sorted(list(whole)))
+        keys = sorted(list(whole))
         check = []
         result = []
 
@@ -15,8 +15,6 @@ class Solution:
             result.append([0, 0, 0])
             check.append(set({0,0,0}))
             
-
-
         for i in range(len(keys)):
             km = keys[i]
             left, right = i, len(keys)-1
